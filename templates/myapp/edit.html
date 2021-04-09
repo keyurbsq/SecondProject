@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{blogger.id}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Blogger Phone Number:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Blogger_Phone_Number" id="id_Blogger_Phone_Number" required maxlength="20" value="{{ blogger.Blogger_Phone_Number }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Blogger Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Blogger_Name" id="id_Blogger_Phone_Number" required maxlength="100" value="{{ blogger.Blogger_Name }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Blogger Email:</label>
+    <div class="col-sm-4">
+        <input type="email" name="Blogger_email" id="id_Blogger_email" required maxlength="254" value="{{ blogger.Blogger_email }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Blog Detail:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Blog_Detail" id="id_Blog_Detail" required maxlength="500" value="{{ blogger.Blog_Detail }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>

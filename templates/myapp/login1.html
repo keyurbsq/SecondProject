@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title> Login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <form method="post">
+        <div class = "container">
+            <div class = "jumbotron">
+              <h1>LogIn</h1>
+                {{ form.as_p }}
+                 {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="Register">
+
+            </div>
+        </div>
+        </form>
+    </body>
+</html>
+
+
+
+{#{% load crispy_forms_tags %}#}
+{##}
+{#<!--Login-->#}
+{#<div class="container py-5">#}
+{#  <h1>Login</h1>#}
+{#  <form method="POST">#}
+{#    {% csrf_token %}#}
+{#    {{ login_form|crispy }}#}
+{#    <button class="btn btn-primary" type="submit">Login</button>#}
+{#  </form>#}
+{#  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>#}
+{#</div>#}
+{##}
+{#{% endfor %}#}

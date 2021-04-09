@@ -1,0 +1,55 @@
+{#{% load static %}#}
+{##}
+{#    <link href = "{% static 'css/login.css' %}" rel="stylesheet" type="text/css"/>#}
+{##}
+{#<form action="action_page.php" method="post">#}
+{#  <div class="container">#}
+{#    <img src="img_avatar2.png" alt="Avatar" class="avatar">#}
+{#  </div>#}
+{#<form>#}
+{#  <div class="container">#}
+{#      <div style="text-align: center;">#}
+{#    <br>#}
+{#      <label for="uname"><b>Last Name</b></label>#}
+{#    <input type="text" placeholder="Enter last name" name="uname" required>#}
+{#    <br/>#}
+{#      <br>#}
+{#    <label for="email"><b>E-mail</b></label>#}
+{#    <input type="text" placeholder="Enter E-mail" name="email" required>#}
+{#    <br/>#}
+{#      <br>#}
+{#    <label for="psw"><b>Password</b></label>#}
+{#    <input type="password" placeholder="Enter Password" name="psw" required>#}
+{#    <br/>#}
+{#      <br>#}
+{#    <button type="submit">Login</button>#}
+{##}
+{#    <button><a href="/congo">Login</a></button>#}
+{#    <br/>#}
+{#  </div>#}
+{##}
+{#  <div class="container" style="background-color:#f1f1f1">#}
+{#    <button type="button" class="cancel">Cancel</button>#}
+{#    <span class="psw">Forgot <a href="#">password?</a></span>#}
+{#  </div>#}
+{#</form>#}
+
+
+
+
+{#{% block content %}#}
+
+{% load crispy_forms_tags %}
+
+<!--Login-->
+<div class="container py-5">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+</div>
+
+{#{% endfor %}#}

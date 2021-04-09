@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Records</title>
+     {% load static %}
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Blogger Phone Number</th>
+        <th>Blogger Name</th>
+        <th>Blogger Email</th>
+        <th>Blog Detail</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+       
+        <!-- a=[2,3,4,5,6]     employees=[['name', 'email'], ['name','email']
+        for i in a:
+            print(a)   {{ employee.ename  }} -->
+{% for blogger in bloggers %}
+    <tr>
+        <td>{{ blogger.Blogger_Phone_Number }}</td>
+        <td>{{ blogger.Blogger_Name }}</td>
+        <td>{{ blogger.Blogger_email }}</td>
+        <td>{{ blogger.Blog_Detail }}</td>
+        <td>
+            <a href="/delete/{{ blogger.id }}">DELETE</a>
+            <a href="/edit/{{ blogger.id }}">EDIT</a>
+
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+
+<center><a href="/emp" class="btn btn-primary">ADD NEW BLOG</a></center>
+
+
+</body>
+</html>
